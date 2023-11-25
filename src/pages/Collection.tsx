@@ -1,11 +1,7 @@
 import { useParams } from "react-router-dom";
 import Navigation from './../components/Navigation';
-
-type Collection = {
-  id: number;
-  name: string;
-  cards: object[];
-};
+import type {Collection} from '../assets/types'
+import Card from "../components/Card";
 
 type Props = {
   collectionList: Collection[];
@@ -36,6 +32,11 @@ const Collection: React.FC<Props> = ({ collectionList, setCollectionList }) => {
   return (
     <div>
       <Navigation></Navigation>
+      {collectionList.map((collection) => {
+          return (
+            <Card collectionData={collectionData}></Card>
+          );
+        })}
     </div>
   );
 };

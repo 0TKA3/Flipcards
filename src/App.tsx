@@ -7,10 +7,15 @@ import { useState } from 'react'
 
 export default function App() {
 
+
+
   const [collectionList, setCollectionList] = useState([
     {
       name: "Химия",
-      cards: [{}],
+      cards: [{
+        question: 'Химическая формула полипропилена',
+        answer: '(C₃H₆)n'
+      },],
       id: 1,
     },
   ]);

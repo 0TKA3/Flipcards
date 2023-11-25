@@ -1,11 +1,6 @@
 import Navigation from "../components/Navigation";
 import { Link } from "react-router-dom";
-
-type Collection = {
-  id: number;
-  name: string;
-  cards: object[];
-};
+import {Collection} from '../assets/types'
 
 type Props = {
   collectionList: Collection[];
