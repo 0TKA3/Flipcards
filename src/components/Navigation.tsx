@@ -10,7 +10,7 @@ export default function Navigation() {
             <div className="logo flex">
                 <Link to='/'><img className='nav_img w-14' src={logo} alt="#" /></Link>
             </div>
-            <Link to="/collection" className="text-xl"><img className='nav_img w-14' src={collection} alt="" /></Link>
+            <Link to='/collections' className="text-xl"><img className='nav_img w-14' src={collection} alt="" /></Link>
             <a href="#"><img className='nav_img w-14' src={star} alt="#" /></a>
         </div>
     </nav>

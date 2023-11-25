@@ -1,10 +1,43 @@
+import { useParams } from "react-router-dom";
 import Navigation from './../components/Navigation';
 
-export default function Collection() {
+type Collection = {
+  id: number;
+  name: string;
+  cards: object[];
+};
+
+type Props = {
+  collectionList: Collection[];
+  setCollectionList: React.Dispatch<React.SetStateAction<Collection[]>>;
+};
+
+const Collection: React.FC<Props> = ({ collectionList, setCollectionList }) => {
+    const { id } = useParams<{ id: string }>();
+
+  // Проверяем, есть ли значение id или оно undefined
+  if (!id) {
+    return <div>Некорректный запрос: не указана коллекция</div>;
+  }
+
+  // Преобразуем id в число (если нужно)
+  const parsedId = parseInt(id);
+
+  // Находим коллекцию по переданному id
+  const collectionData = collectionList.find(
+    (collection) => collection.id === parsedId
+  );
+
+  if (!collectionData) {
+    return <div>Коллекция не найдена</div>;
+  }
+
+  // Здесь можно использовать данные коллекции для отображения на странице
   return (
-    <>
-      <Navigation></Navigation>  
-      
-    </>
-  )
-}
+    <div>
+      <Navigation></Navigation>
+    </div>
+  );
+};
+
+export default Collection;
