@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    font-family: Inter;
+    color: black;
+}
+
+body {
+    background-color: #f6f9fa;
+}
+
+.wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.navigation {
+    background-color: #f6f9fa;
+
+    .nav_img {
+        border-radius: 17px;
+        padding: 8px;
+        &:hover {
+            background-color: #e9e9e9;
+        }
+    }
+}
+
+.main__container {
+    width: 100%;
+    height: 100%;
+}
