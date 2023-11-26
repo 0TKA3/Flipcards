@@ -34,12 +34,24 @@ export default function Card({ collectionData }: CardProps) {
 
   function nextQuestion() {
     if(currentQuestion<cards.length-1) {
-      setCurrentQuestion(currentQuestion+1)
+      setFlipCardClass('card rounded-2xl shadow-xl flex p-5 cursor-pointer slide-out-left')
+      setTimeout(()=>{
+        setFlipCardClass('card rounded-2xl shadow-xl flex p-5 cursor-pointer')
+        setFlipCardClass('card rounded-2xl shadow-xl flex p-5 cursor-pointer slide-in-right')
+        setCurrentQuestion(currentQuestion+1)
+      },100)
+      setTimeout(()=>{setFlipCardClass('card rounded-2xl shadow-xl flex p-5 cursor-pointer')},200)
     }
   }
   function prevQuestion() {
     if(currentQuestion>0) {
-      setCurrentQuestion(currentQuestion-1)
+      setFlipCardClass('card rounded-2xl shadow-xl flex p-5 cursor-pointer slide-out-right')
+      setTimeout(()=>{
+        setFlipCardClass('card rounded-2xl shadow-xl flex p-5 cursor-pointer')
+        setFlipCardClass('card rounded-2xl shadow-xl flex p-5 cursor-pointer slide-in-left')
+        setCurrentQuestion(currentQuestion-1)
+      },100)
+      setTimeout(()=>{setFlipCardClass('card rounded-2xl shadow-xl flex p-5 cursor-pointer')},200)
     }
   }
 
