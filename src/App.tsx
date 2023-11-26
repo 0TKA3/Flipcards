@@ -15,7 +15,10 @@ export default function App() {
       cards: [{
         question: 'Химическая формула полипропилена',
         answer: '(C₃H₆)n'
-      },],
+      }, {
+        question: 'Атомный номер водорода',
+        answer: '1'
+      }],
       id: 1,
     },
   ]);

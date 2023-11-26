@@ -32,11 +32,14 @@ const Collection: React.FC<Props> = ({ collectionList, setCollectionList }) => {
   return (
     <div>
       <Navigation></Navigation>
-      {collectionList.map((collection) => {
-          return (
-            <Card collectionData={collectionData}></Card>
-          );
-        })}
+      <div className="collection__container flex flex-col">
+        <h1 className="text-2xl mb-4 font-bold">{collectionData.name}</h1>
+        {collectionList.map((collection) => {
+            return (
+              <Card collectionData={collectionData} key={collectionData.id}></Card>
+            );
+          })}
+      </div>
     </div>
   );
 };
